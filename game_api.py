@@ -32,8 +32,8 @@ def purchase_armor():
     return "Armor Purchased!\n"
 
 @app.route("/join_a_guild")
-def purchase_armor():
-    purchase_armor_event = {'event_type': 'join_a_guild'}
+def join_a_guild():
+    join_guild_event = {'event_type': 'join_a_guild'}
     log_to_kafka('events', join_guild_event)
     return "Guild Joined!\n"
 
