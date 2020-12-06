@@ -30,14 +30,12 @@ def purchase_sword_event_schema():
     |-- Host: string (nullable = true)
     |-- User-Agent: string (nullable = true)
     |-- event_type: string (nullable = true)
-    |-- sword_type: string (nullable = true)
     """
     return StructType([
         StructField("Accept", StringType(), True),
         StructField("Host", StringType(), True),
         StructField("User-Agent", StringType(), True),
         StructField("event_type", StringType(), True),
-        StructField("sword_type", StringType(), True),
     ])
 
 

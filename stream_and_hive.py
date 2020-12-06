@@ -30,12 +30,14 @@ def purchase_sword_event_schema():
     |-- Host: string (nullable = true)
     |-- User-Agent: string (nullable = true)
     |-- event_type: string (nullable = true)
+    |-- sword_type: string (nullable = true)
     """
     return StructType([
         StructField("Accept", StringType(), True),
         StructField("Host", StringType(), True),
         StructField("User-Agent", StringType(), True),
         StructField("event_type", StringType(), True),
+        StructField("sword_type", StringType(), True),
     ])
 
 
@@ -62,12 +64,14 @@ def join_a_guild_event_schema():
     |-- Host: string (nullable = true)
     |-- User-Agent: string (nullable = true)
     |-- event_type: string (nullable = true)
+    |-- guild_type: string (nullable = true) 
     """
     return StructType([
         StructField("Accept", StringType(), True),
         StructField("Host", StringType(), True),
         StructField("User-Agent", StringType(), True),
         StructField("event_type", StringType(), True),
+        StructField("guild_type", StringType(), True),
     ])
 
 
@@ -208,7 +212,8 @@ def main():
             Accept string,
             Host string,
             `User-Agent` string,
-            event_type string
+            event_type string,
+            sword_type string
             )
             stored as parquet
             location '/tmp/sword_purchases'
@@ -245,7 +250,8 @@ def main():
             Accept string,
             Host string,
             `User-Agent` string,
-            event_type string
+            event_type string,
+            guild_type string
             )
             stored as parquet
             location '/tmp/join_guilds'
